@@ -1,5 +1,5 @@
 import image from "@/app/assets/image12.png";
-import StartupCard, { StartupCardSkeleton } from "@/app/components/StartupCard";
+import { StartupCardSkeleton } from "@/app/components/StartupCard";
 import UserStartups from "@/app/components/UserStartups";
 import Image from "next/image";
 import { Suspense } from "react";

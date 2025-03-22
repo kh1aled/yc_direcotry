@@ -1,5 +1,4 @@
 import { SanityLive } from "@/sanity/lib/live";
-import Loader from "../components/Loader";
 import Navbar from "../components/Navbar";
 import { Toaster } from "@/components/ui/toaster";
 

@@ -1,4 +1,3 @@
-import StartupCard from "@/app/components/StartupCard";
 import { client } from "@/sanity/lib/client";
 import { STARTUPS_BY_ID_QUERY } from "@/sanity/lib/queries";
 import { formDate } from "@/utils";

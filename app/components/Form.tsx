@@ -10,6 +10,7 @@ import { createPitch } from "@/lib/actions";
 import { useRouter } from "next/navigation";
 
 const Form = () => {
+
   // VARIABLES
   const [pitch, setPitch] = useState("**!Hello World**");
   const { toast } = useToast();
@@ -18,13 +19,6 @@ const Form = () => {
   // Submit Form
   //we proccess multi steps
 
-  useEffect(() => {
-    toast({
-      title: "Error",
-      description: "Please check your inputs and try again",
-      variant: "destructive",
-    });
-  }, []); 
 
   const handleFormSubmit = async (prevState: any, formData: FormData) => {
     //1️⃣ collect data form
