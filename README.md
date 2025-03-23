@@ -1,10 +1,10 @@
 <div align="center">
   <br />
    
-   <a href="https://yc-direcotry.vercel.app/">
+   <a href="https://yc-direcotry.vercel.app/" target="_blank">
       live demo : go to discover this web application
    </a>
-   <a href="https://yc-direcotry.vercel.app/">
+   <a href="https://yc-direcotry.vercel.app/" target="_blank">
       <img src="/assets/view.png" alt="Project Banner">
    </a>
   <br />
