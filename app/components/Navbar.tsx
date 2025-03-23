@@ -5,6 +5,7 @@ import logo from "@/app/assets/Group 5.png";
 import avatar from "@/app/assets/image.png";
 import Link from "next/link";
 import { useSession, signIn, signOut } from "next-auth/react";
+import { CircleFadingPlus, LogOut } from "lucide-react";
 
 const Navbar = () => {
   const { data: session } = useSession();
@@ -21,17 +22,27 @@ const Navbar = () => {
         <div className="flex justify-center items-center gap-8 font-bold">
           {session ? (
             <>
-              {/* its ok */}
-              <Link href="/startup/create" className="text-black">
+
+              <Link href="/startup/create" className="text-black hidden sm:block">
                 Create
               </Link>
+    
+              <Link href="/startup/create" className="text-black block sm:hidden">
+              <CircleFadingPlus className="text-primary font-bold"/>
+              </Link>
 
-              <button onClick={() => signOut()} className="text-red-700">
+              <button onClick={() => signOut()} className="text-red-700 hidden sm:block">
                 Logout
               </button>
 
-              {/* its ok */}
-              <Link href={`/user/${session?.id}`} className="text-black">
+
+              <button onClick={() => signOut()} className="text-red-700 block sm:hidden">
+              <LogOut />
+              </button>
+
+
+
+              <Link href={`/user/${session?.id}`} className="text-black hidden sm:block">
                 {session.user?.name}
               </Link>
 

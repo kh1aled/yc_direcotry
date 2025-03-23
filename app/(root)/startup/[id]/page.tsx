@@ -156,7 +156,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
           {/* Pitch */}
 
           <div>
-            <h3 className="text-30-bold">pitch detials</h3>
+            <h3 className="text-30-bold mb-4 capitalize">pitch detials</h3>
 
 
             {
@@ -178,7 +178,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
           {/* Similar Startups */}
 
-          <p className="text-30-semibold">Similar Startups </p>
+          {/* <p className="text-30-semibold">Similar Startups </p> */}
 
           <Suspense fallback={<Skeleton className="view_skeleton"/>} >
               <View id={id}/>
