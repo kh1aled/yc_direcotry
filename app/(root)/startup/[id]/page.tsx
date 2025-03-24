@@ -4,23 +4,20 @@ import { formDate } from "@/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import markdownit from 'markdown-it'
+import markdownit from "markdown-it";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Suspense } from "react";
 import View from "@/app/components/View";
-const md = markdownit()
-
+const md = markdownit();
 
 export const experimental_ppr = true;
 
 const page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const id = (await params).id;
 
-
   const post = await client.fetch(STARTUPS_BY_ID_QUERY, { id });
 
   if (!post) return notFound();
-
 
   const {
     title,
@@ -48,7 +45,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
       {/** Detials */}
 
       <section className="section_container ">
-     <img src={image} className="startup-details_img" alt="thumbnail" />
+        <img src={image} className="startup-details_img" alt="thumbnail" />
 
         {/** Profile Detials */}
 
@@ -62,7 +59,6 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
                   width={48}
                   height={48}
                   className="rounded-full size-10"
-                  
                 />
               </Link>
 
@@ -90,30 +86,26 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
           <div>
             <h3 className="text-30-bold mb-4 capitalize">pitch detials</h3>
 
-
-            {
-            parsedContent ?  
-            (
-              <article className="prose max-w-4xl font-work-sans break-all" dangerouslySetInnerHTML={{__html  : parsedContent}}/>
-            )
-            :
-            
-            (
+            {parsedContent ? (
+              <article
+                className="prose max-w-4xl font-work-sans break-all"
+                dangerouslySetInnerHTML={{ __html: parsedContent }}
+              />
+            ) : (
               <p className="no-result">no details provided</p>
-            )
-            }
+            )}
 
             {/* <p className="startup-details_desc mt-5">{pitch}</p> */}
           </div>
 
-          <hr className="divider"/>
+          <hr className="divider" />
 
           {/* Similar Startups */}
 
           {/* <p className="text-30-semibold">Similar Startups </p> */}
 
-          <Suspense fallback={<Skeleton className="view_skeleton"/>} >
-              <View id={id}/>
+          <Suspense fallback={<Skeleton className="view_skeleton" />}>
+            <View id={id} />
           </Suspense>
 
           {/* <ul className="card_grid">

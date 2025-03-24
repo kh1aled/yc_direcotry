@@ -11,13 +11,14 @@ const nextConfig: NextConfig = {
   },
   images: {
     dangerouslyAllowSVG : true,
+    formats : ["image/avif" , "image/webp"],
     remotePatterns: [
       {
         protocol: "https",
         hostname: "*",
       },
     ],
-    domains: ["avatars.githubusercontent.com"],
+    domains: ["avatars.githubusercontent.com" , "images.pexels.com"],
   },
 
   experimental: {

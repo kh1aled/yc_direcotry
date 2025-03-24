@@ -96,7 +96,7 @@
      }
 
      .startup-details_img{
-        @apply w-full h-auto rounded-xl
+        @apply w-full h-auto rounded-xl object-cover opacity-0 duration-75 ease-in-out
      }
 
      .startup-details_desc {
@@ -214,7 +214,7 @@
 
     .startup-form_btn {
         @apply bg-primary border-[4px] border-black rounded-full p-5 min-h-[70px] w-full font-bold text-[18px] !important;
-    }
+    }s
 
     /* view */
     .view-container {
