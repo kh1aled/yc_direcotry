@@ -15,6 +15,12 @@ export const STARTUPS_QUERY =
   image,
 }`);
 
+export const STARTUPS_TEST =
+  defineQuery(`*[_type == "startup"]{
+  _id, 
+  title, 
+}`);
+
 export const STARTUPS_BY_ID_QUERY =
   defineQuery(`*[_type == "startup" && _id == $id][0] {
   _id, 

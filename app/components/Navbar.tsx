@@ -28,7 +28,7 @@ const Navbar = () => {
               </Link>
     
               <Link href="/startup/create" className="text-black block sm:hidden">
-              <CircleFadingPlus className="text-primary font-bold"/>
+              <CircleFadingPlus className="text-black font-bold"/>
               </Link>
 
               <button onClick={() => signOut()} className="text-red-700 hidden sm:block">

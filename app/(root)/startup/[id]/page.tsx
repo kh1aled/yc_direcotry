@@ -16,74 +16,6 @@ export const experimental_ppr = true;
 const page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const id = (await params).id;
 
-  const posts: any = [
-    {
-      _created_at: new Date(),
-      author: { _id: 1, name: "khaled hamdy" },
-      views: 400,
-      _id: 1,
-      description: "This is a description",
-      image:
-        "https://images.unsplash.com/photo-1557446772-bea6e6bf56eb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      category: "Robots",
-      title: "We Robots",
-    },
-    {
-      _created_at: new Date(),
-      author: { _id: 1, name: "khaled hamdy" },
-      views: 400,
-      _id: 1,
-      description: "This is a description",
-      image:
-        "https://images.unsplash.com/photo-1557446772-bea6e6bf56eb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      category: "Robots",
-      title: "We Robots",
-    },
-    {
-      _created_at: new Date(),
-      author: { _id: 1, name: "khaled hamdy" },
-      views: 400,
-      _id: 1,
-      description: "This is a description",
-      image:
-        "https://images.unsplash.com/photo-1557446772-bea6e6bf56eb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      category: "Robots",
-      title: "We Robots",
-    },
-    {
-      _created_at: new Date(),
-      author: { _id: 1, name: "khaled hamdy" },
-      views: 400,
-      _id: 1,
-      description: "This is a description",
-      image:
-        "https://images.unsplash.com/photo-1557446772-bea6e6bf56eb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      category: "Robots",
-      title: "We Robots",
-    },
-    {
-      _created_at: new Date(),
-      author: { _id: 1, name: "khaled hamdy" },
-      views: 400,
-      _id: 1,
-      description: "This is a description",
-      image:
-        "https://images.unsplash.com/photo-1557446772-bea6e6bf56eb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      category: "Robots",
-      title: "We Robots",
-    },
-    {
-      _created_at: new Date(),
-      author: { _id: 1, name: "khaled hamdy" },
-      views: 400,
-      _id: 1,
-      description: "This is a description",
-      image:
-        "https://images.unsplash.com/photo-1557446772-bea6e6bf56eb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      category: "Robots",
-      title: "We Robots",
-    },
-  ];
 
   const post = await client.fetch(STARTUPS_BY_ID_QUERY, { id });
 
@@ -105,7 +37,6 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   const parsedContent = md.render(pitch || "");
 
-
   return (
     <>
       <section className="pink_container !min-h-[230px]">
@@ -117,11 +48,11 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
       {/** Detials */}
 
       <section className="section_container ">
-        <img src={image} className="startup-details_img" alt="thumbnail" />
+     <img src={image} className="startup-details_img" alt="thumbnail" />
 
         {/** Profile Detials */}
 
-        <div className="px-24 mt-5 space-y-5">
+        <div className="sm:px-24 mt-5 space-y-5">
           <div className="flex-between  gap-5">
             <div className="flex justify-center items-center gap-3">
               <Link href={`/user/${author?._id}`}>
@@ -131,6 +62,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
                   width={48}
                   height={48}
                   className="rounded-full size-10"
+                  
                 />
               </Link>
 
