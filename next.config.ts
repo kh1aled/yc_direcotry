@@ -10,15 +10,26 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds : true,
   },
   images: {
-    dangerouslyAllowSVG : true,
-    formats : ["image/avif" , "image/webp"],
+    dangerouslyAllowSVG: true,
+    formats: ["image/avif", "image/webp"],
     remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+      },
+      {
+        protocol: "https",
+        hostname: "images.pexels.com",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+      },
       {
         protocol: "https",
         hostname: "*",
       },
     ],
-    domains: ["avatars.githubusercontent.com" , "images.pexels.com"],
   },
 
   experimental: {

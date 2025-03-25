@@ -1,5 +1,5 @@
 import Hero from "../components/Hero";
-import StartupCard, { StartupCardSkeleton } from "../components/StartupCard";
+import StartupCard, { StartupCardSkeleton, StartupTypeCard } from "../components/StartupCard";
 import { STARTUPS_QUERY } from "@/sanity/lib/queries";
 import { sanityFetch, SanityLive } from "@/sanity/lib/live";
 import { Suspense } from "react";
@@ -29,7 +29,7 @@ const page = async ({
         <Suspense fallback={<StartupCardSkeleton />}>
           <ul className="mt-7 card_grid">
             {posts?.length > 0 ? (
-              posts.map((post: any) => <StartupCard post={post} key={post._id} />)
+              posts.map((post: StartupTypeCard) => <StartupCard post={post} key={post._id} />)
             ) : (
               <p className="no-result">No startups found</p>
             )}

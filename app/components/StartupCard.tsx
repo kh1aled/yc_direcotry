@@ -1,11 +1,13 @@
 import { Skeleton } from "@/components/ui/skeleton";
-import { cn } from "@/lib/utils";
 import { formDate } from "@/utils";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import { Author, Startup } from "@/sanity/typee";
 
-const StartupCard = ({ post }: { post: any }) => {
+export type StartupTypeCard = Omit<Startup, "author"> & { author?: Author };
+
+const StartupCard = ({ post }: { post: StartupTypeCard }) => {
   const {
     _createdAt,
     author,
@@ -16,6 +18,8 @@ const StartupCard = ({ post }: { post: any }) => {
     category,
     title,
   } = post;
+
+
   return (
     <li className="startup-card group">
       {/* Head */}
@@ -30,15 +34,15 @@ const StartupCard = ({ post }: { post: any }) => {
       {/* Profile */}
       <div className="flex-between mt-5 gap-5">
         <div className="flex-2">
-          <Link href={`/user/${author._id}`}>
-            <p className="text-16-medium line-clamp-1">{author.name}</p>
+          <Link href={`/user/${author?._id}`}>
+            <p className="text-16-medium line-clamp-1">{author?.name}</p>
           </Link>
           <Link href={`/startup/${_id}`}>
             <h3 className="text-26-semibold line-clamp-1 ">{title}</h3>
           </Link>
         </div>
 
-        <Link href={`/user/${author._id}`}>
+        <Link href={`/user/${author?._id}`}>
           <Image
             src={author?.image!}
             alt={author?.name!}
@@ -56,21 +60,17 @@ const StartupCard = ({ post }: { post: any }) => {
 
       {/* Post Image */}
       <Link href={`/startup/${_id}`}>
-        <Image
-          src={image}
-          alt="image post"
-          width={500}
-          height={300}
-          className="startup-card_img"
-          priority
-        />
+        {/* <img src={image} alt="placeholder" className="startup-card_img" /> */}
+
+        <img src={image} alt="placeholder" className="startup-card_img" />
+
       </Link>
 
       {/* Post Category */}
       <div className="flex-between gap-3 mt-5">
         <Link
           className="text-16-medium"
-          href={`/?query=${category.toLowerCase()}`}
+          href={`/?query=${category?.toLowerCase()}`}
         >
           {category}
         </Link>

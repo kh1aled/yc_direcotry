@@ -23,12 +23,9 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
     title,
     image,
     pitch,
-    _id,
     slug,
     _createdAt,
     author,
-    views,
-    description,
     category,
   } = post;
 
@@ -108,15 +105,6 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
             <View id={id} />
           </Suspense>
 
-          {/* <ul className="card_grid">
-            {posts?.length > 0 ? (
-              posts.map((post: any, key: any) => (
-                <StartupCard post={post} key={key} />
-              ))
-            ) : (
-              <p className="no-result">No startups found</p>
-            )}
-          </ul> */}
         </div>
       </section>
     </>
