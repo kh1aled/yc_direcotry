@@ -44,7 +44,11 @@ export const STARTUPS_VIEWS_QUERY =
 
 export const AUTHOR_BY_GITHUB_ID_QUERY =
   defineQuery(`*[_type == "author" && _id == $id][0]{
-  _id
+  _id,
+  name,
+  username,
+  image,
+  bio
   }`);
 
 export const STARTUPS_BY_AUTHOR_QUERY =

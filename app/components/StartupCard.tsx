@@ -60,9 +60,9 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
 
       {/* Post Image */}
       <Link href={`/startup/${_id}`}>
-        {/* <img src={image} alt="placeholder" className="startup-card_img" /> */}
 
-        <img src={image} alt="placeholder" className="startup-card_img" />
+        <Image height={300} width={500} src={`${image}`} alt="placeholder" className="startup-card_img"   loading="lazy"
+        />
 
       </Link>
 
@@ -92,5 +92,17 @@ export const StartupCardSkeleton = () => (
     ))}
   </>
 );
+
+export const StartupCardSkeletonMain = () => (
+  <>
+    {Array.from({ length: 20 }).map((_, index) => (
+      <li key={index}>
+        <Skeleton className="startup-card_skeleton_main" />
+      </li>
+    ))}
+  </>
+);
+
+
 
 export default StartupCard;

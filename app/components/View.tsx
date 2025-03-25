@@ -18,14 +18,6 @@ const View = async ({ id }: { id: string }) => {
 
 
   return (
-    // <div className="view_container">
-    //   <div className="absolute -top-2 -right-2">
-    //     <Ping />
-    //   </div>
-    //   <p className="view-text">
-    //     <span className="font-black"> {post?.views !== null ? `Views: ${post?.views}` : "Loading..."}</span>
-    //   </p>
-    // </div>
     <div className="view_container">
     <div className="absolute -top-2 -right-2">
       <Ping />
